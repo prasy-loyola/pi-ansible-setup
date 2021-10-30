@@ -1,0 +1,10 @@
+- hosts: localhost 
+  vars_files:
+    - vars/main.yml
+  roles:
+    - { role: geerlingguy.raspberry-pi }
+    - { role: weareinteractive.apt }
+  tasks:
+    - name: install oh-my-zsh
+      ansible.builtin.script: sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+
