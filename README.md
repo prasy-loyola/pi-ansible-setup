@@ -1,5 +1,8 @@
 # Raspberrypi setup using Ansible
 
+
+---
+
 ### Automount usb drive on boot
     
 https://www.shellhacks.com/raspberry-pi-mount-usb-drive-automatically/
@@ -14,14 +17,17 @@ $ sudo blkid
 Make a backup and open the /etc/fstab file in your favorite text editor:
 
 
-`sh
+```sh
 sudo cp /etc/fstab /etc/fstab.back
 sudo nano /etc/fstab
-`
+```
 
 Line To Add To /etc/fstab
-`
-UUID=FC05-DF26 /mnt/usb0 ntfs defaults,auto,users,rw,nofail,umask=000 0 0
-`
 
+
+```
+UUID=FC05-DF26 /mnt/usb0 ntfs defaults,auto,users,rw,nofail,umask=000 0 0
+```
+
+---
 
